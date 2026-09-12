@@ -1,0 +1,4 @@
+<button class="toggle-btn" (click)="toggleTheme()" [attr.aria-label]="isDarkMode ? 'Mudar para modo claro' : 'Mudar para modo escuro'">
+  <span class="icon" *ngIf="!isDarkMode">🌙</span>
+  <span class="icon" *ngIf="isDarkMode">☀️</span>
+</button>
