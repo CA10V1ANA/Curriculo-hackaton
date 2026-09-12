@@ -1,0 +1,37 @@
+<section class="skills-container">
+  
+  <!-- Menu de Filtros (Categorias) -->
+  <div class="filters-container">
+    <div class="filters-menu">
+      <!-- O async extrai o valor atual do Observable -->
+      @for (cat of categorias; track cat) {
+        <button 
+          class="filter-btn" 
+          [class.active]="(categoriaAtiva$ | async) === cat"
+          (click)="selecionarCategoria(cat)">
+          {{ cat }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Grid de Habilidades Filtradas -->
+  <div class="skill-grid">
+    @for (skill of habilidadesFiltradas$ | async; track skill.nome) {
+      <div class="skill-card">
+        <div class="skill-header">
+          <div class="skill-title-group">
+            <i *ngIf="skill.iconClass" [class]="skill.iconClass"></i>
+            <span class="skill-name">{{ skill.nome }}</span>
+          </div>
+          <span class="skill-percentage">{{ skill.porcentagem }}%</span>
+        </div>
+        
+        <div class="skill-level-bar">
+          <!-- A largura é injetada direto pelo estilo inline! -->
+          <div class="level-fill" [style.width.%]="skill.porcentagem"></div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
