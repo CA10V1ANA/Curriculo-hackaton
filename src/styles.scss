@@ -1,0 +1,60 @@
+/* =========================================
+   TOKENS GLOBAIS (Light Mode - Padrão)
+   ========================================= */
+:root {
+  // Cores de Fundo (Background)
+  --bg-primary: #fafafa;
+  --bg-secondary: #e2e8f0;
+  --bg-card: #ffffff;
+
+  // Cores de Texto
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  // Sua Cor de Destaque (Roxo Vibrante / Tech Purple)
+  --accent: #7e22ce;
+  --accent-hover: #9333ea;
+  --accent-glow: rgba(126, 34, 206, 0.4);
+  
+  // Fontes e Espaçamentos
+  --font-body: 'Inter', system-ui, sans-serif;
+  --space-md: 1rem;
+  --radius-md: 12px;
+}
+
+/* Reset Básico para começar limpo */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  /* Textura de Dot Grid sutil para não ficar apenas uma tela lisa */
+  background-image: radial-gradient(var(--text-muted) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =========================================
+   TEMA DARK MODE (Quando ativado)
+   ========================================= */
+[data-theme='dark'] {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: rgba(22, 22, 30, 0.7); // Transparência para o vidro
+  --bg-card: rgba(17, 17, 24, 0.6); // Transparência para o vidro
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #334155; // Pontinhos mais escuros no dark mode
+
+  /* Paleta atualizada: Roxo Neon (Vercel/Stripe style) */
+  --accent: #a855f7; 
+  --accent-hover: #c084fc;
+  --accent-glow: rgba(168, 85, 247, 0.4);
+}
