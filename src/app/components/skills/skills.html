@@ -21,7 +21,9 @@
       <div class="skill-card">
         <div class="skill-header">
           <div class="skill-title-group">
-            <i *ngIf="skill.iconClass" [class]="skill.iconClass"></i>
+            @if (skill.iconClass) {
+              <i [class]="skill.iconClass"></i>
+            }
             <span class="skill-name">{{ skill.nome }}</span>
           </div>
           <span class="skill-percentage">{{ skill.porcentagem }}%</span>

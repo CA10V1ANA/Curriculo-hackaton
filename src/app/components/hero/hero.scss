@@ -1,35 +1,55 @@
 .hero-container {
   display: flex;
+  /* Mobile-first: começa empilhado (coluna), centralizado */
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 2rem;
-  padding: 4rem 2rem;
+  padding: 2rem 1rem;
   max-width: 900px;
   margin: 0 auto;
+
+  /* A partir de 768px (tablet/desktop): lado a lado */
+  @media (min-width: 768px) {
+    flex-direction: row;
+    text-align: left;
+    padding: 4rem 2rem;
+  }
 }
 
 .hero-avatar {
   flex-shrink: 0;
 
   .avatar-placeholder {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), var(--accent-hover));
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     box-shadow: 0 10px 25px var(--accent-glow);
+
+    @media (min-width: 768px) {
+      width: 150px;
+      height: 150px;
+      font-size: 4rem;
+    }
   }
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
+
+  @media (min-width: 768px) {
+    align-items: flex-start;
+  }
 
   .badge {
     background-color: var(--bg-secondary);
@@ -41,11 +61,11 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     border: 1px solid var(--text-muted);
-    opacity: 0.8; /* Mantém o badge discreto */
+    opacity: 0.8;
   }
 
   .name {
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 800;
     line-height: 1.1;
     /* Efeito Premium: Gradiente no Texto */
@@ -54,25 +74,21 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
   }
 
   .tagline {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
     max-width: 600px;
     line-height: 1.5;
+
+    @media (min-width: 768px) {
+      font-size: 1.25rem;
+    }
   }
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-
-  .hero-content {
-    align-items: center;
-  }
-}
