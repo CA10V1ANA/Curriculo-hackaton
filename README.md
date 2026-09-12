@@ -56,4 +56,4 @@ A interface (SPA - Single Page Application) foi pensada em blocos independentes 
    npm run start
    \`\`\`
 
-> *Feito com ❤️, Angular, RxJS e muita Engenharia de Software.*
+> *Feito com Angular, RxJS e muita Engenharia de Software.*
