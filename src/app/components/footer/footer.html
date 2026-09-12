@@ -1,0 +1,20 @@
+<footer class="footer-container">
+  <div class="footer-content">
+    <h3 class="footer-title">Vamos conversar?</h3>
+    <p class="footer-subtitle">Estou sempre aberto a novos desafios e oportunidades.</p>
+    
+    <div class="contact-links">
+      @for (contato of contatos; track contato.nome) {
+        <a [href]="contato.url" target="_blank" class="contact-btn" [attr.aria-label]="contato.nome">
+          <!-- innerHTML injeta o SVG com segurança -->
+          <span class="contact-icon" [innerHTML]="contato.svg"></span>
+          <span class="contact-name">{{ contato.nome }}</span>
+        </a>
+      }
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>© {{ anoAtual }} Caio Viana. Feito com ❤️ e Angular.</p>
+  </div>
+</footer>
