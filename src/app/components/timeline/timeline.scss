@@ -1,0 +1,81 @@
+.timeline-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.timeline-list {
+  position: relative;
+  
+  /* A linha vertical (espinha dorsal) */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px; // Alinhado com o centro da bolinha
+    width: 2px;
+    background: var(--text-muted);
+    opacity: 0.3;
+  }
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+
+  /* A bolinha do nó */
+  .timeline-dot {
+    width: 32px;
+    height: 32px;
+    background-color: var(--bg-card);
+    border: 4px solid var(--accent);
+    border-radius: 50%;
+    z-index: 1; // Para ficar por cima da linha
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px var(--bg-primary); // "Corta" a linha atrás da bolinha
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  &:hover .timeline-dot {
+    transform: scale(1.2);
+    background-color: var(--accent);
+  }
+
+  .timeline-content {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--bg-secondary);
+    flex-grow: 1;
+
+    .ano {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .cargo {
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .descricao {
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+  }
+}

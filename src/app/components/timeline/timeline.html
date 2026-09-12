@@ -1,0 +1,20 @@
+<section class="timeline-container">
+  <h2 class="section-title">Minha Trajetória</h2>
+  
+  <div class="timeline-list">
+    <!-- Usando a nova sintaxe do Angular (@for) para percorrer a lista -->
+    @for (item of historico; track item.ano) {
+      <div class="timeline-item">
+        <!-- Bolinha da linha do tempo -->
+        <div class="timeline-dot"></div>
+        
+        <!-- Conteúdo do card -->
+        <div class="timeline-content">
+          <span class="ano">{{ item.ano }}</span>
+          <h3 class="cargo">{{ item.cargo }}</h3>
+          <p class="descricao">{{ item.descricao }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
