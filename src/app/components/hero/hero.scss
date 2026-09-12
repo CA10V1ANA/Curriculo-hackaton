@@ -1,0 +1,78 @@
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-avatar {
+  flex-shrink: 0;
+
+  .avatar-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: white;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 10px 25px var(--accent-glow);
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  .badge {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1px solid var(--text-muted);
+    opacity: 0.8; /* Mantém o badge discreto */
+  }
+
+  .name {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    /* Efeito Premium: Gradiente no Texto */
+    background: linear-gradient(to right, var(--text-primary), var(--accent-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.5;
+  }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+}
