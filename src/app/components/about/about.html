@@ -1,0 +1,20 @@
+<section class="about-container">
+  <div class="about-header">
+    <span class="badge">SOBRE MIM</span>
+    <h2 class="title">Quem é Caio de Oliveira Viana</h2>
+    <p class="subtitle">
+      Full Stack Developer e estudante de Engenharia de Software, apaixonado por
+      transformar ideias em produtos digitais robustos e bem projetados.
+    </p>
+  </div>
+
+  <div class="cards-grid">
+    @for (card of cards; track card.title) {
+      <div class="feature-card">
+        <div class="card-icon">{{ card.icon }}</div>
+        <h3 class="card-title">{{ card.title }}</h3>
+        <p class="card-description">{{ card.description }}</p>
+      </div>
+    }
+  </div>
+</section>
